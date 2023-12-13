@@ -1,38 +1,124 @@
+body {
+    background-color: #272933;
+	color: #7ce3ff;
+	font-weight: 600;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    width: 100%;
+    max-width: 1100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+	height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.set-value-form,
+.reset-value-form  {
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+    border: 3px solid #7ce3ff;
 }
 
-.App-link {
-  color: #61dafb;
+.top-inner-column {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.set-value-form > div,
+.reset-value-form > div {
+    padding: 5px;
+    border: 3px solid #7ce3ff;
+	margin-bottom: 15px;
+
+	height: 200px;
+}
+
+.set-value-form > div:last-child,
+.reset-value-form > div:last-child {
+	margin-bottom: 0;
+	height: auto;
+}
+
+.set-value-inner-column,
+.reset-value-inner-column {
+    padding: 10px;
+    width: 350px;
+}
+
+.set-value-inner-column {
+	display: flex;
+	align-items: center;
+}
+
+.set-value-inner-column label {
+	flex-grow: 1;
+}
+
+.set-value-inner-column input {
+	height: 30px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.reset-value-inner-column input {
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.reset-value-inner-column .max-number {
+	color: red;
+}
+
+.max-number-btn {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.button-wrapper {
+	padding: 19px !important;
+}
+
+.button-wrapper button {
+	padding: 8px 30px;
+	background-color: #72e8fa;
+	border: 0;
+	cursor: pointer;
+
+	transition: 0.2s linear;
+}
+
+.button-wrapper button:hover {
+	opacity: 0.8;
+}
+
+.set-button-wrapper,
+.reset-button-wrapper {
+	display: flex;
+}
+
+.reset-button-wrapper {
+	justify-content: space-around;
+}
+
+.set-button-wrapper {
+	justify-content: center;
 }
