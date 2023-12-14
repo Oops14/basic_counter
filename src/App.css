@@ -79,16 +79,22 @@ body {
 .reset-value-inner-column input {
 	width: 100%;
 	text-align: center;
-	height: 40px;
+	height: 60px;
 	font-size: 25px;
 	font-weight: 700;
+
+	background-color: transparent;
+	border: 0;
+	font-size: 70px;
+	color: #72e8fa;
 }
 
 .reset-value-inner-column .max-number {
 	color: red;
 }
 
-.max-number-btn {
+.max-number-btn,
+.buttons-disabled {
 	opacity: 0.5;
 	pointer-events: none;
 }
@@ -121,4 +127,9 @@ body {
 
 .set-button-wrapper {
 	justify-content: center;
+}
+
+.not-active-reset-area {
+	font-size: 25px;
+	text-align: center;
 }

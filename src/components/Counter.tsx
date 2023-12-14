@@ -8,11 +8,11 @@ export const Counter = () => {
     // Set max number for the input.
     const [maxValue, setMaxValue] = useState(5);
     // Define the "reset" value in the appropriate component.
-    const [resetValue, setResetValue] = useState(0);
+    const [resetValue, setResetValue] = useState<number>();
 
     // React.useEffect(() => console.log("Start", startValue), [startValue]);
     // React.useEffect(() => console.log("Max", maxValue), [maxValue]);
-    React.useEffect(() => console.log("Reset", resetValue), [resetValue]);
+    // React.useEffect(() => console.log("Reset", resetValue), [resetValue]);
 
     return (
         <div className="counter">
