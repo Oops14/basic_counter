@@ -96,7 +96,6 @@ body {
 .max-number-btn,
 .buttons-disabled {
 	opacity: 0.5;
-	pointer-events: none;
 }
 
 .button-wrapper {
@@ -132,4 +131,20 @@ body {
 .not-active-reset-area {
 	font-size: 25px;
 	text-align: center;
+}
+
+.disabled {
+	background-color: red;
+	opacity: 0.5;
+	color: rgba(2, 2, 2, 0.422);
+	border: solid red;
+}
+
+.disabled:hover {
+	opacity: 0.5 !important;
+	cursor: not-allowed;
+}
+
+.incorrect-value {
+	color: red;
 }
