@@ -10,18 +10,12 @@ type ResetValuePropsType = {
 export const ResetValue = (props: ResetValuePropsType) => {
     const [activeValue, setActiveValue] = useState(false);
 
-    const [inputValue, setInputValue] = useState<number | undefined>();
-
     useEffect(() => {
         if (
             props.resetValue ||
-            props.resetValue !== undefined ||
-            inputValue ||
-            inputValue !== undefined
+            props.resetValue !== undefined
         ) {
             setActiveValue(true);
-
-            setInputValue(props.resetValue);
 
             if (props.resetValue === props.startValue) {
                 localStorage.setItem(
@@ -32,43 +26,20 @@ export const ResetValue = (props: ResetValuePropsType) => {
         } else {
             setActiveValue(false);
         }
-    }, [props.resetValue, inputValue, props.startValue]);
-
-    // React.useEffect(
-    //     () => console.log("activeValue", inputValue),
-    //     [inputValue]
-    // );
+    }, [props.resetValue, props.startValue]);
 
     let increaseValue = () => {
         if (
             props.resetValue !== undefined &&
             props.resetValue < props.maxValue
         ) {
-            // let num = e.currentTarget.valueAsNumber;
-
-            // setInputValue(props.resetValue);
-            // localStorage.removeItem('default_value');
             props.setResetValue(props.resetValue + 1);
         }
     };
 
     let resetData = () => {
         props.setResetValue(props.startValue);
-
-        let stringValue = localStorage.getItem("default_value");
-        if (stringValue) {
-            let newValue = JSON.parse(stringValue);
-            props.setResetValue(newValue);
-        }
     };
-
-    // useEffect(() => {
-    //     let stringValue = localStorage.getItem("default_value");
-    //     if (stringValue) {
-    //         let newValue = JSON.parse(stringValue);
-    //         props.setResetValue(newValue);
-    //     }
-    // }, [props, props.startValue]);
 
     useEffect(() => {
         let stringValue = localStorage.getItem("default_value");
@@ -100,9 +71,7 @@ export const ResetValue = (props: ResetValuePropsType) => {
                             return (
                                 <input
                                     type="number"
-                                    // defaultValue={inputValue}
                                     value={props.resetValue}
-                                    // onChange={increaseValue}
                                     className={
                                         props.resetValue === props.maxValue
                                             ? "max-number"
@@ -118,19 +87,6 @@ export const ResetValue = (props: ResetValuePropsType) => {
                                 </div>
                             );
                         }
-                        // else if (activeValue === false) {
-                        //     return (
-                        //         <div className={"not-active-reset-area"}>
-                        //             Enter value and press 'Set'
-                        //         </div>
-                        //     );
-                        // } else if (props.maxValue === props.startValue) {
-                        //     return (
-                        //         <div className={"not-active-reset-area"}>
-                        //             Incorrect value!
-                        //         </div>
-                        //     );
-                        // }
                     })()}
                 </div>
             </div>

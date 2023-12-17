@@ -5,10 +5,6 @@ import { ResetValue } from "./ResetValue";
 export const Counter = () => {
     // Set start number for the input.
     const [startValue, setStartValue] = useState(0);
-
-    useEffect(() => {
-
-    }, [startValue])
     // Set max number for the input.
     const [maxValue, setMaxValue] = useState(5);
     // Define the "reset" value in the appropriate component.
